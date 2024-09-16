@@ -62,7 +62,9 @@ array3 = [9, 10, 11]
 - **Output:**
 [1, 2, 3, 4, 7, 8, 9, 10, 11]
 ### Time Complexity of the Solution:
-The time complexity for merging `K` sorted arrays is **O(N * log K)** using a priority queue or divide-and-conquer technique like merge sort. Here, `N` is the total number of elements across all arrays.
+The time complexity for merging `K` sorted arrays is **O(N * log K)** using a priority queue or divide-and-conquer technique like merge sort. Here, `N` is the total number of elements across all arrays
+<img width="754" alt="Screenshot 2024-09-16 at 9 46 36 AM" src="https://github.com/user-attachments/assets/511cf65b-ce2c-4de7-943b-2342a6f6e9cf">
+.
 
 ### (Implementation is in the `merge_sort.py` file)
 
@@ -177,6 +179,7 @@ Since the problem specifies that the removal of duplicates should be done in pla
 S(N) = O(1)
 #### Optimization:
 - This solution is optimal in terms of time and space complexity, so no further improvements are necessary.
+<img width="773" alt="Screenshot 2024-09-16 at 9 47 42 AM" src="https://github.com/user-attachments/assets/d834cf30-aa56-4dfa-a6b7-fa8814fa055b">
 
 ---
 
