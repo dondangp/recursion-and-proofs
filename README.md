@@ -192,3 +192,99 @@ Time Complexity: **O(N * K * log K)**
 - **Problem 2 (Removing Duplicates from a Sorted Array):**  
 Time Complexity: **O(N)**  
 Space Complexity: **O(1)**
+
+## Using Constants to prove time complexity
+# Problem 0: Fibonacci Sequence
+
+### Task:
+Implement the Fibonacci sequence recursively and debug the function call for `fib(5)`.
+
+## Time Complexity Proof using Constants
+
+Let's break down the recursive Fibonacci sequence in terms of time complexity:
+
+1. **Base Case**:  
+   If `n == 0` or `n == 1`, the function returns a constant value.  
+   Therefore, the time complexity is `c1`, a constant time operation.
+
+2. **Recursive Case**:  
+   For `n > 1`, the Fibonacci function makes two recursive calls: `fib(n-1)` and `fib(n-2)`.  
+   The time for each call can be represented as:
+   T(n) = T(n-1) + T(n-2) + c2
+Here, `c2` represents the constant time taken for the addition operation (`return fib(n-1) + fib(n-2)`).
+
+3. **Recursion Tree**:  
+This recursive structure creates a binary tree. Each level of the tree generates more recursive calls. In the worst case, the number of calls grows exponentially.
+
+4. **Total Time Complexity**:  
+Since each level of the recursion tree doubles the number of calls, the total time complexity is proportional to the number of nodes in the tree. The height of the tree is `n`, and the number of nodes is `O(2^n)`.
+
+Thus, the time complexity can be expressed as:
+T(n) = c1 + c2 * (2^n) = O(2^n)
+
+Where `c1` is the base case time, and `c2` is the time per recursive step.
+
+---
+
+# Problem 1: Merging K Sorted Arrays
+
+### Task:
+Given `K` sorted arrays of size `N` each, merge them while maintaining their sorted order.
+
+## Time Complexity Proof using Constants
+
+We can analyze the time complexity using the following steps:
+
+1. **Merging Two Arrays**:  
+Merging two sorted arrays takes linear time proportional to the size of the arrays. If both arrays have `N` elements, merging them takes `c1 * N` time.
+
+2. **Merging K Arrays**:  
+To merge `K` arrays, we can use a **min-heap (priority queue)**. The heap allows us to find the smallest element among the arrays in logarithmic time (`log K`).  
+For each element (a total of `N * K` elements), we perform the heap operation, which takes `c2 * log K` time.
+
+3. **Total Time Complexity**:  
+The total time complexity for merging all arrays is:
+T(N, K) = c1 * (N * K) * log K = O(N * K * log K)
+Where:
+- `c1` is the time to merge two arrays,
+- `c2` is the time for heap operations.
+
+---
+
+# Problem 2: Removing Duplicates from a Sorted Array
+
+### Task:
+Given a sorted array, remove the duplicate elements and return only unique elements.
+
+## Time Complexity Proof using Constants
+
+1. **Traverse the Array**:  
+We start by traversing the sorted array once, comparing each element to the previous one to detect duplicates. This takes linear time, proportional to the size of the array `N`.
+
+For each element, we perform a constant time comparison. This can be represented as `c1` time per comparison.
+
+2. **Move Elements**:  
+If a duplicate is found, we skip over it. Otherwise, we move the unique element forward to its correct position in the array. Moving each element is a constant time operation (`c2`), and we perform this operation for each element in the array.
+
+3. **Total Time Complexity**:  
+Since we traverse the array once and perform constant time operations on each element, the total time complexity is:
+T(N) = c1 * N = O(N)
+Where:
+- `c1` is the time for each comparison,
+- `c2` is the time for moving elements.
+
+### Space Complexity:
+The space complexity is `O(1)` since we are modifying the array in place without using extra space.
+
+---
+
+# Conclusion
+
+- **Problem 0 (Fibonacci Sequence):**  
+Time Complexity: **O(2^n)**, derived from the recursive tree structure where each level of recursion doubles the number of calls.
+
+- **Problem 1 (Merging K Sorted Arrays):**  
+Time Complexity: **O(N * K * log K)**, derived from merging arrays using a priority queue.
+
+- **Problem 2 (Removing Duplicates from a Sorted Array):**  
+Time Complexity: **O(N)**, since we traverse the array once and perform constant time operations on each element.
