@@ -18,6 +18,7 @@ Implement the Fibonacci sequence recursively and debug the function call for `fi
 - Moving back to `fib(4)`, the value `2` from `fib(3)` is added to the value returned by `fib(2)` (which is `1`), resulting in `fib(4)` returning `3`.
 
 - Finally, back in `fib(5)`, the results from `fib(4)` and `fib(3)` are summed (i.e., `3 + 2`), yielding the final output of `5`.
+<img width="691" alt="Screenshot 2024-09-16 at 9 16 05 AM" src="https://github.com/user-attachments/assets/9ea0f05c-9eb2-4a19-aecd-eaa8a39d8bcc">
 
 ### (A more detailed explanation of the function call stack is included in the `fib.py` file)
 
